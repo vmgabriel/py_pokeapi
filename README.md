@@ -8,6 +8,16 @@
 - requests
 
 # Deploy:
+## Environments
+This need two env variables:
+ENV -> this could be "QA", "DEV", "PROD"
+PORT -> (Optional) = INTEGER port of server
+
+## Requirements
+- Docker
+
+
+For load project with docker you 
 ```bash
 make run
 ```

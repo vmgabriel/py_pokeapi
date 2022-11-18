@@ -1,7 +1,7 @@
-FROM python:3.10-alpine
+FROM python:3.10-slim-buster
 LABEL Name=python-pokeapi
 
-RUN apk update && apk upgrade && apk add git
+RUN apt-get update && apt-get -y upgrade && apt-get install -y git
 COPY requirements.txt /tmp/
 
 RUN pip install -r /tmp/requirements.txt

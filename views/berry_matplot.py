@@ -2,7 +2,6 @@
 
 # Libraries
 import altair as alt
-from vega_datasets import data
 from domain import factories
 from .berry import berry_view
 
