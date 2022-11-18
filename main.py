@@ -4,6 +4,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+import messages
 # Modules
 from config import config
 from server import ServerFastApiFactory
@@ -21,7 +22,14 @@ app.add_middleware(
 server_factory = ServerFastApiFactory()
 
 
-@app.get("/allBerryStats")
+@app.get(
+    "/allBerryStats",
+    response_model=messages.PokeApiResponse,
+    tags=["Berry Stats"],
+    summary="Get Berry Stats",
+    status_code=200,
+)
 def get_all_berries():
+    """Get All Berries Statistics"""
     server = server_factory()
     return berry_view.list(server)
